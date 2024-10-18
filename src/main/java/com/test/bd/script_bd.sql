@@ -32,7 +32,7 @@ CREATE TABLE `bread_type` (
   PRIMARY KEY (`bread_id`),
   KEY `flour_id` (`flour_id`),
   CONSTRAINT `bread_type_ibfk_1` FOREIGN KEY (`flour_id`) REFERENCES `flour` (`flour_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `bread_type` (
 
 LOCK TABLES `bread_type` WRITE;
 /*!40000 ALTER TABLE `bread_type` DISABLE KEYS */;
-INSERT INTO `bread_type` VALUES (1,'Baguette',2.50,0.50,120,1),(2,'Ciabatta',3.00,0.70,150,2),(3,'Whole Wheat Bread',3.50,0.60,140,2);
+INSERT INTO `bread_type` VALUES (1,'Baguettes',3.50,0.50,120,1),(3,'Whole Wheat Bread',3.50,0.60,140,2),(7,'Sourdough',4.00,0.75,180,1),(8,'Rye Bread',3.75,0.65,160,3),(9,'Brioche',5.00,0.55,130,2),(10,'Multigrain Bread',4.00,0.70,170,2),(11,'Focaccia',3.80,0.80,150,1);
 /*!40000 ALTER TABLE `bread_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,9 +57,8 @@ CREATE TABLE `flour` (
   `flour_name` varchar(100) NOT NULL,
   `quantity` decimal(10,2) NOT NULL,
   `unit` varchar(50) NOT NULL,
-  `last_restocked` date NOT NULL,
   PRIMARY KEY (`flour_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +67,7 @@ CREATE TABLE `flour` (
 
 LOCK TABLES `flour` WRITE;
 /*!40000 ALTER TABLE `flour` DISABLE KEYS */;
-INSERT INTO `flour` VALUES (1,'All-Purpose Flour',200.00,'kg','2024-10-01'),(2,'Whole Wheat Flour',150.00,'kg','2024-09-25'),(3,'Bread Flour',100.00,'kg','2024-10-05');
+INSERT INTO `flour` VALUES (1,'harinapan',1002.00,'kg'),(2,'caraota',150.00,'kg'),(3,'Bread Flour',100.00,'kg'),(5,'enter rice',321.00,'kg');
 /*!40000 ALTER TABLE `flour` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-16 18:31:42
+-- Dump completed on 2024-10-18 17:01:07

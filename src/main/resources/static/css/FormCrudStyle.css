@@ -32,14 +32,22 @@ main {
     padding: 2rem;
 }
 
-.form-section, .product-section {
+.form-section, .product-section{
     margin-bottom: 2rem;
     background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+#flourId{
+    margin-bottom: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.7rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 13px;
+}
 h2 {
     color: #2980b9;
     text-align: center;

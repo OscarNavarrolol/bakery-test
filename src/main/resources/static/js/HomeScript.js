@@ -1,34 +1,41 @@
+async function getFlourNameById(flourId) {
+    const response = await fetch(`http://localhost:8083/flour/${flourId}`);
+    const flour = await response.json();
+    return flour.flourName;
+}
+
 async function chargeBreads() {
     const response = await fetch('http://localhost:8083/bread');
     const breads = await response.json();
     const showcaseContainer = document.getElementById('breads');
-    
-    breads.forEach(pan => {
+
+    for (const bread of breads) {
         const showcase = document.createElement('div');
         showcase.classList.add('showcases');
-        
+
         const name = document.createElement('h3');
-        name.textContent = pan.breadName;
-        
+        name.textContent = bread.breadName;
+
         const price = document.createElement('p');
-        price.textContent = `Price: $${pan.price}`;
-        
+        price.textContent = `Price: $${bread.price}`;
+
         const weight = document.createElement('p');
-        weight.textContent = `Weight: ${pan.weight} kg`;
-        
+        weight.textContent = `Weight: ${bread.weight} kg`;
+
         const productionTime = document.createElement('p');
-        productionTime.textContent = `Production Time: ${pan.productionTime} mins`;
-        
-        const flourId = document.createElement('p');
-        flourId.textContent = `Flour ID: ${pan.flourId}`;
-        
+        productionTime.textContent = `Production Time: ${bread.productionTime} mins`;
+
+        const flourName = await getFlourNameById(bread.flourId);
+        const flour = document.createElement('p');
+        flour.textContent = `Flour: ${flourName}`;
+
         showcase.appendChild(name);
         showcase.appendChild(price);
         showcase.appendChild(weight);
         showcase.appendChild(productionTime);
-        showcase.appendChild(flourId);
+        showcase.appendChild(flour);
         showcaseContainer.appendChild(showcase);
-    });
+    }
 }
-
 chargeBreads();
+

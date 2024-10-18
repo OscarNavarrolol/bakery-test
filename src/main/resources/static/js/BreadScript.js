@@ -1,4 +1,3 @@
-// BreadScript.js
 const apiUrl = 'http://localhost:8083/bread';
 
 document.getElementById('productForm').addEventListener('submit', function(event) {
@@ -9,7 +8,7 @@ document.getElementById('productForm').addEventListener('submit', function(event
     const productWeight = document.getElementById('productWeight').value;
     const productTime = document.getElementById('productTime').value;
     const flourId = document.getElementById('flourId').value;
-    
+
     if (productId) {
         updateProduct(productId, productName, productPrice, productWeight, productTime, flourId);
     } else {
@@ -67,11 +66,9 @@ async function updateProduct(id, name, price, weight, time, flourId) {
 
 function displayProduct(product) {
     const productList = document.getElementById('productList');
-
     const li = document.createElement('li');
     li.dataset.id = product.breadId;
     li.innerHTML = `${product.breadName} - $${product.price}`;
-
     addButtonsToListItem(li, product);
     productList.appendChild(li);
 }
@@ -110,11 +107,24 @@ async function deleteProduct(id, li) {
     li.remove();
 }
 
-// Initial load
 async function loadProducts() {
     const response = await fetch(apiUrl);
     const products = await response.json();
     products.forEach(displayProduct);
 }
 
+async function loadFlours() {
+    const response = await fetch('http://localhost:8083/flour');
+    const flours = await response.json();
+    const flourSelect = document.getElementById('flourId');
+
+    flours.forEach(flour => {
+        const option = document.createElement('option');
+        option.value = flour.flourId;
+        option.textContent = flour.flourName;
+        flourSelect.appendChild(option);
+    });
+}
+
 loadProducts();
+loadFlours();

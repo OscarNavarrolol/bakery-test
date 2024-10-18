@@ -54,7 +54,7 @@ public class BreadTypeRestController {
         }
 
     }
-// TODo
+
     @DeleteMapping("/{bread_id}")
     public ResponseEntity<BreadType> deleteBreadType(@PathVariable("bread_id") Long breadId) {
         BreadType breadTypes = breadTypeService.getById(breadId);

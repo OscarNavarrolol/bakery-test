@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Gestión de Panadería</title>
-    <link rel="stylesheet" href="/css/FormCrudStyle.css">
+  <meta charset="UTF-8">
+  <title>Gestión de Panadería</title>
+  <link rel="stylesheet" href="/css/FormCrudStyle.css">
 </head>
 <body>
-  <header>
-    <h1>Gestión de Productos de Panadería</h1>
-    <a href="/bakery_bread" id="goHome">Home</a>
-  </header>
-  <main>
-    <section class="form-section">
-      <h2>Agregar/Editar Producto</h2>
-      <form id="productForm">
-        <input type="hidden" id="productId">
-        <label for="productName">Nombre del Producto:</label>
-        <input type="text" id="productName" required>
-        <label for="productPrice">Precio:</label>
-        <input type="number" id="productPrice" step="0.1"required>
-        <label for="productWeight">Peso:</label>
-        <input type="number" id="productWeight" step="0.1" required>
-        <label for="productTime">Tiempo de Producción:</label>
-        <input type="number" id="productTime" required>
-        <label for="flourId">ID de la Harina:</label>
-        <input type="number" id="flourId" required>
-        <button type="submit">Guardar</button>
-        <button type="button" id="cancelEdit">Cancelar</button>
-      </form>
-    </section>
-    <section class="product-section">
-      <h2>Productos</h2>
-      <ul id="productList"></ul>
-    </section>
-  </main>
-  <footer></footer>
-  <script src="/js/BreadScript.js"></script>
+<header>
+  <h1>Gestión de Productos de Panadería</h1>
+  <a href="/bakery_bread" id="goHome">Home</a>
+</header>
+<main>
+  <section class="form-section">
+    <h2>Agregar/Editar Producto</h2>
+    <form id="productForm">
+      <input type="hidden" id="productId">
+      <label for="productName">Nombre del Producto:</label>
+      <input type="text" id="productName" required>
+      <label for="productPrice">Precio:</label>
+      <input type="number" id="productPrice" step="0.1" required>
+      <label for="productWeight">Peso:</label>
+      <input type="number" id="productWeight" step="0.1" required>
+      <label for="productTime">Tiempo de Producción:</label>
+      <input type="number" id="productTime" required>
+      <label for="flourId">Harina:</label>
+      <select id="flourId" required></select>
+      <button type="submit">Guardar</button>
+      <button type="button" id="cancelEdit">Cancelar</button>
+    </form>
+  </section>
+  <section class="product-section">
+    <h2>Productos</h2>
+    <ul id="productList"></ul>
+  </section>
+</main>
+<footer></footer>
+<script src="/js/BreadScript.js"></script>
 </body>
 </html>
