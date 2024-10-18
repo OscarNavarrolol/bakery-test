@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión de Harinas</title>
+    <title>Manages Flours</title>
     <link rel="stylesheet" href="/css/FormCrudStyle.css">
 </head>
 <body>
   <header>
-    <h1>Gestión de Harinas</h1>
+    <h1>Manages Flours</h1>
     <a href="/bakery_bread" id="goHome">Home</a>
   </header>
   <main>
     <section class="form-section">
-      <h2>Agregar/Editar Harina</h2>
+      <h2>Add/Edit Flour</h2>
       <form id="flourForm">
         <input type="hidden" id="flourId">
-        <label for="flourName">Nombre de la Harina:</label>
+        <label for="flourName">Flour Name:</label>
         <input type="text" id="flourName" required>
-        <label for="flourQuantity">Cantidad:</label>
+        <label for="flourQuantity">flourQuantity:</label>
         <input type="number" id="flourQuantity" required>
-        <label for="flourUnit">Unidad:</label>
+        <label for="flourUnit">Unit:</label>
         <input type="text" id="flourUnit" required>
-        <button type="submit">Guardar</button>
-        <button type="button" id="cancelEdit">Cancelar</button>
+        <button type="submit">save</button>
+        <button type="button" id="cancelEdit">cancel</button>
       </form>
     </section>
     <section class="product-section">
-      <h2>Harinas</h2>
+      <h2>Flours</h2>
       <ul id="flourList"></ul>
     </section>
   </main>
