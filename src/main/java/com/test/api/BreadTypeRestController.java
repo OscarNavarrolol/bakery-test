@@ -18,7 +18,7 @@ public class BreadTypeRestController {
     @Autowired
     private BreadTypeService breadTypeService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<BreadType>> getBreadTypes() {
         List<BreadType> breadTypes = breadTypeService.getAll();
 
@@ -28,7 +28,7 @@ public class BreadTypeRestController {
         return ResponseEntity.ok(breadTypes);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<BreadType> createBreadType(@RequestBody BreadType breadType) {
         BreadType breadTypeCreated = breadTypeService.saveBreadType(breadType);
         return new ResponseEntity<>(breadTypeCreated, HttpStatus.CREATED);

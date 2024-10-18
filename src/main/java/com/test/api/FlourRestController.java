@@ -18,7 +18,7 @@ public class FlourRestController {
     @Autowired
     private FlourService flourService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Flour>> getFlour() {
         List<Flour> flours = flourService.getAll();
 
@@ -28,7 +28,7 @@ public class FlourRestController {
         return ResponseEntity.ok(flours);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<Flour> createFlour(@RequestBody Flour flour) {
         Flour flourCreated = flourService.saveFlour(flour);
         return new ResponseEntity<>(flourCreated, HttpStatus.CREATED);

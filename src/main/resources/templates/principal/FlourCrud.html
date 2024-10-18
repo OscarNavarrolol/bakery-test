@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Harinas</title>
+    <link rel="stylesheet" href="/css/FormCrudStyle.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Harinas</h1>
+    <a href="/bakery_bread" id="goHome">Home</a>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2>Agregar/Editar Harina</h2>
+      <form id="flourForm">
+        <input type="hidden" id="flourId">
+        <label for="flourName">Nombre de la Harina:</label>
+        <input type="text" id="flourName" required>
+        <label for="flourQuantity">Cantidad:</label>
+        <input type="number" id="flourQuantity" required>
+        <label for="flourUnit">Unidad:</label>
+        <input type="text" id="flourUnit" required>
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancelEdit">Cancelar</button>
+      </form>
+    </section>
+    <section class="product-section">
+      <h2>Harinas</h2>
+      <ul id="flourList"></ul>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="/js/FlourScript.js"></script>
+</body>
+</html>

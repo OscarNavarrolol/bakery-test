@@ -20,9 +20,6 @@ public class Flour {
 
     private String unit;
 
-    @Column(name = "last_restocked")
-    private LocalDate lastRestocked;
-
     public Long getFlourId() {
         return flourId;
     }
@@ -53,13 +50,5 @@ public class Flour {
 
     public void setUnit(String unit) {
         this.unit = unit;
-    }
-
-    public LocalDate getLastRestocked() {
-        return lastRestocked;
-    }
-
-    public void setLastRestocked(LocalDate lastRestocked) {
-        this.lastRestocked = lastRestocked;
     }
 }
